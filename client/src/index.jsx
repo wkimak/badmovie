@@ -11,7 +11,7 @@ class App extends React.Component {
   constructor(props) {
   	super(props)
   	this.state = {
-      movies: [{deway: "movies"}],
+      movies: [],
       favorites: [{deway: "favorites"}],
       showFaves: false
   	}
@@ -23,10 +23,11 @@ class App extends React.Component {
   }
 
   getMovies(genreId) {
-    //make an axios request to your server on the GET SEARCH endpoint
     axios.get('/search', {params:{genreId: genreId}})
       .then((response) => {
-        console.log('SEARCH GET SUCCESFUL', response);
+        this.setState({
+          movies: response.data.results
+        })
       })
       .catch((err) => {
         console.log(err);
@@ -35,7 +36,7 @@ class App extends React.Component {
   }
 
   saveMovie() {
-    //same as above but do something diff
+    
   }
 
   deleteMovie() {
