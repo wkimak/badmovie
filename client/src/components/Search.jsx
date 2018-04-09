@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 
 class Search extends React.Component {
   constructor(props) {
@@ -7,9 +8,19 @@ class Search extends React.Component {
       genres: []
     }
   }
-  getGenres() {
+
+  componentDidMount() {
     //make an axios request in this component to get the list of genres from your endpoint GET GENRES
+    axios.get('http://localhost:3000/genres')
+    .then((data) => {
+      console.log(data);
+    })
+
+    .catch((err) => {
+      console.log(err);
+    })
   }
+
   render() {
     return (
       <div className="search">

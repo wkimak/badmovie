@@ -2,8 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import $ from 'jquery';
 // import AnyComponent from './components/filename.jsx'
-import Search from './components/Search.jsx'
-import Movies from './components/Movies.jsx'
+import axios from 'axios';
+import Search from './components/Search.jsx';
+import Movies from './components/Movies.jsx';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -15,12 +17,14 @@ class App extends React.Component {
   	}
 
     this.getMovies = this.getMovies.bind(this)
-    // whats missing?
+    this.saveMovie = this.saveMovie.bind(this);
+    this.deleteMovie = this.deleteMovie.bind(this);
     this.swapFavorites = this.swapFavorites.bind(this)
   }
 
   getMovies() {
     //make an axios request to your server on the GET SEARCH endpoint
+
   }
 
   saveMovie() {

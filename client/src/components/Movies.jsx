@@ -7,8 +7,6 @@ class Movies extends React.Component {
   }
 //
 
-
-
 //    Make an onclick for each list item. If the movies shown is the search results, 
 //.   add it to the db (do it in the main app, and passs down the function). 
 
